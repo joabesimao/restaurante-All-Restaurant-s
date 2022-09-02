@@ -29,7 +29,7 @@ const ListaRestaurantes = () => {
     axios
       .get<IPaginacao<IRestaurante>>(proximaPagina)
       .then((resposta) => {
-        setRestaurantes([...restaurantes,...resposta.data.results]);
+        setRestaurantes([...restaurantes, ...resposta.data.results]);
         setProximaPagina(resposta.data.next);
       })
       .catch((erro) => {
